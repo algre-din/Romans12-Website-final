@@ -1,0 +1,130 @@
+body {
+    background-color: #fefae0;
+}
+
+.container {
+    background-color: #fefae0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "navbar_left navbar_left navbar_right"
+    "space banner banner"
+    "text_2 text_1 text_3"
+    "footer footer footer";
+}
+
+.navbar_left {
+    grid-area: navbar_left;
+    background-color: #fefae0;
+    text-align: left;
+}
+
+.navbar_right {
+    grid-area: navbar_right;
+    background-color: #fefae0;
+    text-align: right;
+}
+
+.navbar_left ul, .navbar_right ul {
+    list-style-type: none;
+    font-family: Restora;
+    display: inline;
+    padding: 30px 20px 20px;
+}
+
+.navbar_left li, .navbar_right li {
+    list-style-type: none;
+    display: inline;
+    padding: 30px 20px 20px;
+}
+
+.navbar_left a, .navbar_right a {
+    text-decoration: none;
+}
+
+.space {
+    grid-area: space;
+}
+.banner {
+    grid-area: banner;
+    text-align: center;
+}
+
+.banner p {
+    grid-area: banner;
+    text-align: center;
+    line-height: 1%;
+}
+
+.line_1 {
+    font-family: Richardson Script DEMO;
+    font-size: 30em;
+}
+
+.line_2 {
+    font-family: Restora;
+    font-size: 2em;
+}
+
+.line_3 {
+    font-family: Restora;
+    font-size: 5em;
+}
+
+.text_2 {
+    grid-area: text_2;
+    margin: 1em;
+}
+
+.text_2 p {
+    font-size: 1em;
+}
+
+.text_1 {
+    grid-area: text_1;
+}
+
+.text_3 {
+    grid-area: text_3;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+h2, p {
+    font-family: Restora;
+}
+
+.kjv {
+    text-align: right;
+    opacity: 35%;
+}
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 0 1em 0 1em;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+.collapsible {
+    font-family: Richardson Script DEMO;
+}
