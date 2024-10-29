@@ -1,5 +1,16 @@
-body {
-    background-color: #fefae0;
+@font-face {
+    font-family: 'Restora';
+    src: url(fonts/RestoraFont/Restora.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraBold.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraBoldItalic.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraExtraLight.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraItalic.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraThinItalic.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'RichardsonScriptDEMO';
+    src: url(fonts/richardson_script/RichardsonScriptDEMO.otf) format('opentype');
 }
 
 .container {
@@ -7,17 +18,25 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
+    grid-template-areas:
     "navbar_left navbar_left navbar_right"
     "banner banner banner"
-    "text_2 text_1 text_3"
+    "subheading subheading subheading"
+    "text_2 text_1 text_1"
     "footer footer footer";
 }
 
+
+
+/*Navbar section*/
 .navbar_left {
     grid-area: navbar_left;
     background-color: #fefae0;
     text-align: left;
+}
+
+.navbar_left img {
+    width: max(5vw, 50px);
 }
 
 .navbar_right {
@@ -26,102 +45,157 @@ body {
     text-align: right;
 }
 
-.navbar_left ul, .navbar_right ul {
-    list-style-type: none;
+ul {
+    list-style: none;
+    background: #fefae0;
     font-family: Restora;
-    display: inline;
-    padding: 30px 20px 20px;
 }
 
-.navbar_left li, .navbar_right li {
-    list-style-type: none;
-    display: inline;
-    padding: 30px 20px 20px;
+ul li {
+    display: inline-block;
+    position: relative;
+    font-size: clamp(1px, 2vw, 25px);
 }
 
-.navbar_left a, .navbar_right a {
+ul li a {
+    color: #283618;
     text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    text-align: center;
+    font-size: clamp(1px, 2vw, 25px);
 }
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #fefae0;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+ul li a:hover {
+    background: #fffcea;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+/*End of navbar section*/
 
 .banner {
     grid-area: banner;
+    background-image: url('images/LIVINGSACRIFICEROMANS12.jpg');
+    /*background-color: #704214;*/
+    background-size: cover;
+    background-position: center center;
+    top: 100%;
+    height: 70vh;
+    width: 100%;
+    /*position: fixed;*/
+}
+
+.banner:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*background: #704214; */
+    opacity: .7;
+    z-index: -1;
+}
+
+.subheading {
+    grid-area: subheading;
     text-align: center;
-}
-
-.banner p {
-    grid-area: banner;
-    text-align: center;
-    line-height: 50%;
-}
-
-.line_1 {
-    font-family: Richardson Script DEMO;
-    font-size: 30em;
-}
-
-.line_2 {
-    font-family: Restora;
-    font-size: 2em;
-}
-
-.line_3 {
-    font-family: Restora;
-    font-size: 5em;
+    font-size: large;
 }
 
 .text_2 {
     grid-area: text_2;
-    margin: 1em;
-}
-
-.text_2 p {
-    font-size: 1em;
+    padding: 0.5em;
 }
 
 .text_1 {
     grid-area: text_1;
+    padding: 0 50px 0 20px;
 }
 
-.text_3 {
-    grid-area: text_3;
+.text_1 li {
+    font-family: 'Restora';
+    font-size: clamp(25px, 2.5vw, 35px);
+    font-style: italic;
+    color: #283618;
 }
 
 .footer {
     grid-area: footer;
 }
 
-h2, p {
-    font-family: Restora;
+h2 {
+    font-family: 'RichardsonScriptDEMO';
+    font-size: min(12vw, 200px);
+    font-weight: normal;
+    line-height: 0.7;
+    color: #283618;
+}
+
+h3 {
+    font-family: 'Restora';
+    font-size: 2em;
+}
+
+p {
+    font-family: 'Restora';
+    font-size: 1.2em;
+    color: #283618;
 }
 
 .kjv {
     text-align: right;
     opacity: 35%;
+    font-size: 20px;
+}
+
+img {
+    width: 2em;
 }
 
 .collapsible {
-    background-color: #777;
-    color: white;
+    background-color: #fefae0;
+    color: #283618;
     cursor: pointer;
     padding: 0 1em 0 1em;
     width: 100%;
-    border: none;
+    border-style: solid;
+    border-color: #283618;
     text-align: left;
-    outline: none;
-    font-size: 15px;
+    outline: 10px;
+    font-size: clamp(10px, 1vw, 40px);
   }
   
   .active, .collapsible:hover {
-    background-color: #555;
+    background-color: #283618;
+    color: #fefae0;
   }
   
   .content {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #fefae0;
+    border-style: solid;
   }
-
-.collapsible {
-    font-family: Richardson Script DEMO;
-}
