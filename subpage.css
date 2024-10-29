@@ -1,5 +1,16 @@
-body {
-    background-color: #fefae0;
+@font-face {
+    font-family: 'Restora';
+    src: url(fonts/RestoraFont/Restora.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraBold.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraBoldItalic.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraExtraLight.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraItalic.otf) format('opentype'),
+         url(fonts/RestoraFont/RestoraThinItalic.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'RichardsonScriptDEMO';
+    src: url(fonts/richardson_script/RichardsonScriptDEMO.otf) format('opentype');
 }
 
 .container {
@@ -7,17 +18,25 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
+    grid-template-areas:
     "navbar_left navbar_left navbar_right"
-    "space banner banner"
-    "text_2 text_1 text_3"
+    "banner banner banner"
+    "subheading subheading subheading"
+    "text_1 text_1 text_1"
+    "video video video"
+    "testmony testimony testimony"
     "footer footer footer";
 }
 
+/*Navbar section*/
 .navbar_left {
     grid-area: navbar_left;
     background-color: #fefae0;
     text-align: left;
+}
+
+.navbar_left img {
+    width: max(5vw, 50px);
 }
 
 .navbar_right {
@@ -26,105 +45,138 @@ body {
     text-align: right;
 }
 
-.navbar_left ul, .navbar_right ul {
-    list-style-type: none;
+ul {
+    list-style: none;
+    background: #fefae0;
     font-family: Restora;
-    display: inline;
-    padding: 30px 20px 20px;
 }
 
-.navbar_left li, .navbar_right li {
-    list-style-type: none;
-    display: inline;
-    padding: 30px 20px 20px;
+ul li {
+    display: inline-block;
+    position: relative;
+    font-size: clamp(1px, 2vw, 25px);
 }
 
-.navbar_left a, .navbar_right a {
+ul li a {
+    color: #283618;
     text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    text-align: center;
+    font-size: clamp(1px, 2vw, 25px);
 }
 
-.space {
-    grid-area: space;
+ul li ul.dropdown {
+    width: 100%;
+    background: #fefae0;
+    position: absolute;
+    z-index: 999;
+    display: none;
 }
-.banner {
-    grid-area: banner;
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown li a {
+    display: block;
+    padding: 10px;
     text-align: center;
 }
 
-.banner p {
-    grid-area: banner;
+ul li a:hover {
+    background: #fffcea;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+/*End of navbar section*/
+
+.subheading {
+    grid-area: subheading;
     text-align: center;
-    line-height: 1%;
-}
-
-.line_1 {
-    font-family: Richardson Script DEMO;
-    font-size: 30em;
-}
-
-.line_2 {
-    font-family: Restora;
-    font-size: 2em;
-}
-
-.line_3 {
-    font-family: Restora;
-    font-size: 5em;
-}
-
-.text_2 {
-    grid-area: text_2;
-    margin: 1em;
-}
-
-.text_2 p {
-    font-size: 1em;
 }
 
 .text_1 {
     grid-area: text_1;
+    padding: 0 20vw 0 20vw;
 }
 
-.text_3 {
-    grid-area: text_3;
+.video {
+    grid-area: video;
+    margin: auto;
+    padding: 0 20vw 0 20vw;
 }
+
+.video iframe {
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.video p {
+    width: 560;
+    height: 315;
+    font-size: clamp(25px, 1vw, 30px);
+}
+
+.testimony {
+    grid-area: testimony;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "portrait description";
+  }
+
+  .portrait {
+    grid-area: portrait;
+    width: 5rem;
+  }
+
+  .description {
+    grid-area: description;
+    font-size: 1em;
+  }
 
 .footer {
     grid-area: footer;
+    background-color: #704214;
+    text-align: center;
+    width: 100%;
+    border-radius: 1em;
+    color: #fefae0;
 }
 
-h2, p {
+.footer p {
+    font-size: 1em;
+}
+
+h2 {
+    font-family: RichardsonScriptDEMO;
+    font-size: clamp(120px, 12vw, 200px);
+    font-weight: normal;
+    line-height: 0;
+}
+
+h3 {
     font-family: Restora;
+    font-size: 2em;
+}
+
+p {
+    font-family: Restora;
+    font-size: clamp(25px, 2vw, 30px);
 }
 
 .kjv {
     text-align: right;
     opacity: 35%;
+    font-size: 20px;
 }
 
-.collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 0 1em 0 1em;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  
-  .active, .collapsible:hover {
-    background-color: #555;
-  }
-  
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  }
-
-.collapsible {
-    font-family: Richardson Script DEMO;
+img {
+    width: 2em;
 }
