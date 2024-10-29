@@ -8,10 +8,16 @@
     <title>Romans 12</title>
 </head>
 <body class="container">
+    <!--Navbar-->
     <div class="navbar_left">
         <ul>
-            <li><a href="index.html"></a><img src="images\logo.png" alt="home button" width="20cm"> <!--Home--></a></li>
-            <li><a>Insights</a>
+            <li><a href="index.html"><img src="images\logo.png" alt="home button" width="20cm"></a>
+                <ul class="dropdown">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="sources.html">Sources</a></li>
+                </ul>
+            </li>
+            <li>Insights
                 <ul class="dropdown">
                     <li><a href="verses1-2.html">Verses 1-2</a></li>
                     <li><a href="verses3-8.html">Verses 3-8</a></li>
@@ -22,49 +28,70 @@
             </li>
             <li><a href="testimonies.html">Testimonies</a></li>
         </ul>
-    </div>
-    
-    <div class="navbar_right">
-        <ul>
-            <a href="about.html"><li>About</li></a>
-        </ul>
-    </div>
+    </div> 
+    <!--Navbar end-->
 
     <div class="banner">
         <style>
             .banner {
                 grid-area: banner;
-                background-image: url('images/LIVINGSACRIFICEROMANS12.jpg');
-                /*background-color: #704214;*/
+                background-image: url('images/SETAPART.jpg');
                 background-size: cover;
                 background-position: center center;
                 top: 100%;
-                height: 40vh;
+                height: 50vh;
                 width: 100%;
-                /*position: fixed;*/
+                border-radius: 1em;
+            }
+
+            .testimony {
+                grid-area: testimony;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                "description description";
+            }
+
+            .description {
+                grid-area: description;
+                text-align: center;
+                display: inline;
+                font-size: 1em;
             }
         </style>
     </div>
 
     <h2 class="subheading">Verses 1-2</h2>
 
-    <div class="text_1">
-        <p>Romans 12:1-2 is a powerful call to live fully for God. It challenges us to move beyond just attending church or saying we believe, and instead, let our entire lives reflect Him. This passage is about daily surrender, transformation, and service.
+    <div class="text_1"> 
+
+        <p><span class="Romans v1v2">Romans 12:1-2<span class="Romanstext v1v2text"></span></span> is a powerful call to live fully for God. It challenges us to move beyond just attending church or saying we believe, and instead, let our entire lives reflect Him. This passage is about daily surrender, transformation, and service.
         <br><br><strong>Living Sacrifices in Everyday Life</strong>
-        <br><br>Romans 12:1 says to "offer your bodies as a living sacrifice, holy and pleasing to God." Paul is urging us to live fully for God in everything we do. It’s not about giving something up but about choosing to live in a way that honors God every day. Instead of thinking of sacrifice as something painful, it’s about living with purpose—trusting God's plan and being willing to serve Him in all areas of life. 
+        <br><br><span class="Romans v1">Romans 12:1<span class="Romanstext v1text"></span></span> says to "offer your bodies as a living sacrifice, holy and pleasing to God." Paul is urging us to live fully for God in everything we do. It’s not about giving something up but about choosing to live in a way that honors God every day. Instead of thinking of sacrifice as something painful, it’s about living with purpose—trusting God's plan and being willing to serve Him in all areas of life. 
         <br><br>This is the foundation of Christian service. Our lives become an ongoing offering to God, reflecting Him in both small and big ways, whether it's through kindness, generosity, or just being present for others.
         <br><br><strong>Standing Out by Being Transformed</strong>
-        <br><br>Romans 12:2 tells us, “Do not conform to the pattern of this world, but be transformed by the renewing of your mind.” This means we need to think differently from what culture tells us. The world often focuses on self-interest, but Paul calls us to let God shape our mindset, leading us to serve out of love, not obligation. 
+        <br><br><span class="Romans v2">Romans 12:2<span class="Romanstext v2text"></span></span> tells us, “Do not conform to the pattern of this world, but be transformed by the renewing of your mind.” This means we need to think differently from what culture tells us. The world often focuses on self-interest, but Paul calls us to let God shape our mindset, leading us to serve out of love, not obligation. 
         <br><br>When we allow God to transform our thinking, we start to see service as more than just a task—it’s about caring for others because we’re loved by God. Whether it’s helping a friend or showing kindness to a stranger, we begin to serve with genuine compassion.
         <br><br><strong>Discovering God's Purpose in Service</strong>
-        <br><br>Romans 12:2 continues, “Then you will be able to test and approve what God’s will is—his good, pleasing, and perfect will.” As we draw closer to God, He helps us understand how to serve. It’s not always about big acts; sometimes, it’s in the everyday moments where we show God’s love—listening to a friend, standing up for someone, or simply being kind.
-        <br><br>Ultimately, Romans 12:1-2 calls us to live a life of service, not out of obligation, but as a joyful response to God’s love. When we offer ourselves to God and let Him transform us, we find purpose in serving others and making a real difference.</p>
+        <br><br><span class="Romans v2i">Romans 12:2<span class="Romanstext v2itext"></span></span> continues, “Then you will be able to test and approve what God’s will is—his good, pleasing, and perfect will.” As we draw closer to God, He helps us understand how to serve. It’s not always about big acts; sometimes, it’s in the everyday moments where we show God’s love—listening to a friend, standing up for someone, or simply being kind.
+        <br><br>Ultimately, <span class="Romans v1v2i">Romans 12:1-2<span class="Romanstext v1v2itext"></span></span> calls us to live a life of service, not out of obligation, but as a joyful response to God’s love. When we offer ourselves to God and let Him transform us, we find purpose in serving others and making a real difference.</p>
+
+        <div class="video">
+            <iframe width="560" height="400" src="https://www.youtube.com/embed/eFUD1RN5-QE?si=J_3coSSodzE-kIwz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>Being saved is not the same as living in the image of Jesus Christ. Avary's baptism testimony is a powerful reminder that no matter how far we may have strayed from God, it's never too late to commit our lives to Him. Her transformation reflects <span class="Romans v1v2ii">Romans 12:1-2<span class="Romanstext v1v2iitext"></span></span>, where Paul calls believers to offer themselves as living sacrifices and be transformed by the renewing of their minds. Avary's life changed as she sought to reflect God and be ready to do His will. For young women, this also means being set apart from the world, embracing a life that may look different from society or the culture around them, and choosing to live fully for Christ.</p>
+            </div>
+
+        <div class="testimony">
+            <p class="description">If you were moved by Avary's powerful testimony about her journey to follow Christ through baptism, click the button below to discover more inspiring stories from young women. These testimonies dive into themes from Romans 12—surrender, transformation, and living out God's calling. See how others have navigated their faith journeys and find encouragement as they share how God has uniquely shaped and led them!
+                <br><a href="testimonies.html#avarysalagan" target="_blank"><button type="button">Read testimonies ></button></a>
+            </p>
+        </div>
+
+        <script src="tooltip.js"></script>
     </div>
 
-    <div class="testimony">
-        <img class="portrait" src="images\9025756_house_icon.png" alt="">
-        <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium eius aut repudiandae autem aspernatur modi perferendis amet error non quaerat odio, saepe similique natus debitis molestiae quisquam! Quae, consequuntur.</p>
-    </div>
+    
     <div class="footer">
         <p>By Algrero</p>
     </div>
