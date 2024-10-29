@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Restora';
-    src: url(fonts/RestoraFont/Restora.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraBold.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraBoldItalic.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraExtraLight.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraItalic.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraThinItalic.otf) format('opentype');
+    src: url(fonts/RestoraFont/Restora.otf) format('opentype')
+}
+
+@font-face {
+    font-family: 'RestoraThinItalic';
+    src: url(fonts/RestoraFont/RestoraThinItalic.otf) format('opentype');
 }
 
 @font-face {
@@ -19,30 +19,37 @@
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "navbar_left navbar_left navbar_right"
-    "banner banner banner"
+    "navbar_left navbar_left navbar_left"
+    "carousel-container carousel-container carousel-container"
     "subheading subheading subheading"
     "text_2 text_1 text_1"
     "footer footer footer";
 }
 
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "navbar_left"
+        "carousel-container"
+        "subheading"
+        "text_1"
+        "text_2"
+        "footer"; 
+    }
 
+
+}
 
 /*Navbar section*/
 .navbar_left {
     grid-area: navbar_left;
     background-color: #fefae0;
-    text-align: left;
 }
 
 .navbar_left img {
     width: max(5vw, 50px);
-}
-
-.navbar_right {
-    grid-area: navbar_right;
-    background-color: #fefae0;
-    text-align: right;
 }
 
 ul {
@@ -54,16 +61,16 @@ ul {
 ul li {
     display: inline-block;
     position: relative;
-    font-size: clamp(1px, 2vw, 25px);
+    padding: 0 20px 0 20px;
+    font-size: clamp(20px, 1.8vw, 25px);
 }
 
 ul li a {
     color: #283618;
     text-decoration: none;
     display: block;
-    padding: 20px 25px;
     text-align: center;
-    font-size: clamp(1px, 2vw, 25px);
+    font-size: clamp(20px, 2vw, 25px);
 }
 
 ul li ul.dropdown {
@@ -91,37 +98,62 @@ ul li a:hover {
 ul li:hover ul.dropdown {
     display: block;
 }
+
 /*End of navbar section*/
 
-.banner {
-    grid-area: banner;
-    background-image: url('images/LIVINGSACRIFICEROMANS12.jpg');
-    /*background-color: #704214;*/
-    background-size: cover;
-    background-position: center center;
-    top: 100%;
-    height: 70vh;
+/*carousel*/
+.carousel-container{ 
+    grid-area: carousel-container; 
+    position: relative; 
     width: 100%;
-    /*position: fixed;*/
+    overflow: hidden;
+    border-radius: 0.5em;
+} 
+
+.carousel-slide { 
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
 }
 
-.banner:after {
-    content: '';
-    position: absolute;
-    top: 0;
+.carousel-slide img { 
+    width: 100%; 
+    border-radius: 2px; /* Optional: Add some rounding to the images */ 
+} 
+
+.prev, .next { 
+    cursor: pointer; 
+    position: absolute; 
+    top: 50%; 
+    width: auto; 
+    padding: 16px; 
+    margin-top: -22px; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 18px; 
+    transition: 0.6s ease; 
+    border-radius: 0 3px 3px 0; 
+    user-select: none; 
+} 
+
+.next {
+    right: 0; 
+    border-radius: 3px 0 0 3px; 
+} 
+
+.prev { 
     left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    /*background: #704214; */
-    opacity: .7;
-    z-index: -1;
+    border-radius: 3px 0 0 3px; 
+} 
+
+.prev:hover, .next:hover { 
+    background-color: rgba(0, 0, 0, 0.8); 
 }
+/*end carousel*/
 
 .subheading {
     grid-area: subheading;
     text-align: center;
-    font-size: large;
+    padding: 0 1vw 0 1vw;
 }
 
 .text_2 {
@@ -135,14 +167,23 @@ ul li:hover ul.dropdown {
 }
 
 .text_1 li {
-    font-family: 'Restora';
-    font-size: clamp(25px, 2.5vw, 35px);
+    font-family: 'RestoraThinItalic';
+    font-size: clamp(15px, 1.9vw, 35px);
     font-style: italic;
     color: #283618;
+    line-height: 2em;
 }
 
 .footer {
     grid-area: footer;
+    background-color: #704214;
+    text-align: center;
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+.footer p {
+    color: #fefae0;
 }
 
 h2 {
@@ -155,12 +196,12 @@ h2 {
 
 h3 {
     font-family: 'Restora';
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 p {
     font-family: 'Restora';
-    font-size: 1.2em;
+    font-size: clamp(10px, 1em, 20px);
     color: #283618;
 }
 
@@ -175,21 +216,22 @@ img {
 }
 
 .collapsible {
-    background-color: #fefae0;
-    color: #283618;
+    background-color: #283618;
+    color: #fefae0;
     cursor: pointer;
     padding: 0 1em 0 1em;
     width: 100%;
     border-style: solid;
     border-color: #283618;
+    border-radius: 0.5em;
     text-align: left;
     outline: 10px;
     font-size: clamp(10px, 1vw, 40px);
   }
   
   .active, .collapsible:hover {
-    background-color: #283618;
-    color: #fefae0;
+    background-color: #fefae0;
+    color: #283618;
   }
   
   .content {
