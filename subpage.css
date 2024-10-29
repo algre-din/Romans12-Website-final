@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Restora';
-    src: url(fonts/RestoraFont/Restora.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraBold.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraBoldItalic.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraExtraLight.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraItalic.otf) format('opentype'),
-         url(fonts/RestoraFont/RestoraThinItalic.otf) format('opentype');
+    src: url(fonts/RestoraFont/Restora.otf) format('opentype')
+}
+
+@font-face {
+    font-family: 'RestoraThinItalic';
+    src: url(fonts/RestoraFont/RestoraThinItalic.otf) format('opentype');
 }
 
 @font-face {
@@ -19,12 +19,10 @@
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-    "navbar_left navbar_left navbar_right"
+    "navbar_left navbar_left navbar_left"
     "banner banner banner"
     "subheading subheading subheading"
     "text_1 text_1 text_1"
-    "video video video"
-    "testmony testimony testimony"
     "footer footer footer";
 }
 
@@ -39,12 +37,6 @@
     width: max(5vw, 50px);
 }
 
-.navbar_right {
-    grid-area: navbar_right;
-    background-color: #fefae0;
-    text-align: right;
-}
-
 ul {
     list-style: none;
     background: #fefae0;
@@ -54,14 +46,14 @@ ul {
 ul li {
     display: inline-block;
     position: relative;
-    font-size: clamp(1px, 2vw, 25px);
+    padding: 0 20px 0 20px;
+    font-size: clamp(20px, 1.8vw, 25px);
 }
 
 ul li a {
     color: #283618;
     text-decoration: none;
     display: block;
-    padding: 20px 25px;
     text-align: center;
     font-size: clamp(1px, 2vw, 25px);
 }
@@ -100,30 +92,23 @@ ul li:hover ul.dropdown {
 
 .text_1 {
     grid-area: text_1;
-    padding: 0 20vw 0 20vw;
+    padding: 0 20vw 3em 20vw;
 }
 
 .video {
     grid-area: video;
-    margin: auto;
-    padding: 0 20vw 0 20vw;
 }
 
 .video iframe {
     display: block;
     margin: auto;
     width: 100%;
-}
-
-.video p {
-    width: 560;
-    height: 315;
-    font-size: clamp(25px, 1vw, 30px);
+    height: 70vh;
+    border-radius: 1em;
 }
 
 .testimony {
     grid-area: testimony;
-    align-self: center;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
@@ -133,11 +118,23 @@ ul li:hover ul.dropdown {
 
   .portrait {
     grid-area: portrait;
-    width: 5rem;
+    display: inline;
+    width: 100%;
+    border-radius: 1em;
+  }
+
+  .portrait img {
+    width: 100%;
   }
 
   .description {
     grid-area: description;
+    display: inline;
+    font-size: 1em;
+    padding: 0 0 0 1em;
+  }
+
+  .description p {
     font-size: 1em;
   }
 
@@ -151,7 +148,10 @@ ul li:hover ul.dropdown {
 }
 
 .footer p {
+    font-family: Restora;
+    font-style: normal;
     font-size: 1em;
+    color: #fefae0;
 }
 
 h2 {
@@ -159,6 +159,7 @@ h2 {
     font-size: clamp(120px, 12vw, 200px);
     font-weight: normal;
     line-height: 0;
+    color: #283618;
 }
 
 h3 {
@@ -167,8 +168,11 @@ h3 {
 }
 
 p {
-    font-family: Restora;
-    font-size: clamp(25px, 2vw, 30px);
+    font-family: 'RestoraThinItalic';
+    font-size: clamp(15px, 1.5vw, 35px);
+    font-style: italic;
+    line-height: 2em;
+    color: #283618;
 }
 
 .kjv {
@@ -179,4 +183,65 @@ p {
 
 img {
     width: 2em;
+}
+
+button {
+    font-family: Restora;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #fefae0;
+    color: #283618;
+    border: 2px solid #283618;
+    border-radius: 0.5em;
+  }
+
+  button:hover {
+    background-color: #283618;
+    color: #fefae0;
+  }
+
+/* for tooltip*/    
+
+.Romans { 
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer; 
+} 
+
+.Romanstext {
+    font-family: Restora;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+.Romans .Romanstext { 
+    visibility: hidden; 
+    width: 20vw; 
+    background-color: #704214; 
+    color: #fefae0; 
+    text-align: center; 
+    border-radius: 5px; 
+    padding: 5px; 
+    position: absolute; 
+    z-index: 1; 
+    bottom: 125%; /* Position the tooltip above the text */ 
+    left: 50%; 
+    margin-left: -80px;
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+ 
+.Romans:hover .Romanstext { 
+    visibility: visible; 
+    opacity: 1; 
+}
+
+span {
+    font-weight: bold;
 }
