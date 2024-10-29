@@ -8,10 +8,16 @@
     <title>Romans 12</title>
 </head>
 <body class="container">
+        <!--Navbar-->
         <div class="navbar_left">
             <ul>
-                <li><a href="index.html"></a><img src="images\logo.png" alt="home button" width="20cm"> <!--Home--></a></li>
-                <li><a>Insights</a>
+                <li><a href="index.html"><img src="images\logo.png" alt="home button" width="20cm"></a>
+                    <ul class="dropdown">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="sources.html">Sources</a></li>
+                    </ul>
+                </li>
+                <li>Insights
                     <ul class="dropdown">
                         <li><a href="verses1-2.html">Verses 1-2</a></li>
                         <li><a href="verses3-8.html">Verses 3-8</a></li>
@@ -22,16 +28,37 @@
                 </li>
                 <li><a href="testimonies.html">Testimonies</a></li>
             </ul>
-        </div>
-        
-        <div class="navbar_right">
-            <ul>
-                <a href="about.html"><li>About</li></a>
-            </ul>
+        </div> 
+        <!--Navbar end-->
+
+        <!--This is the code for the carousel--> 
+        <div class="carousel-container"> 
+
+            <div class="carousel-slide"> 
+                <!--Images cropped 16:9, resized to width1200px-->
+                <img src="images/LIVINGSACRIFICEROMANS12.jpg" alt="Living Sacrifice"> 
+
+                <img src="images/SETAPART.jpg" alt="Set Apart"> 
+
+                <img src="images/LIVINGWITHPURPOSE.jpg" alt="Living with Purpose"> 
+
+                <img src="images/RADICALGRACE.jpg" alt="Radical Grace"> 
+
+                <img src="images/CHRISTLIKEHARMONY.jpg" alt="Harmony"> 
+
+                <img src="images/REFLECTINGCHRIST.jpg" alt="Reflecting Christ"> 
+
+            </div> 
+
+        <!-- carousel navigation buttons -->
+
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button> 
+
+        <button class="next" onclick="moveSlide(1)">&#10095;</button> 
+
         </div>
 
-        <div class="banner">
-        </div>
+        <script src="carousel.js"></script>
 
         <h2 class="subheading">What does it mean to be a Living Sacrifice?</h2>
 
@@ -100,6 +127,7 @@
                 }
             </script>                
         </div>
+
         <div class="text_1">
             <ol class="chapter">
             <li>I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service.
@@ -127,29 +155,7 @@
             </ol>
         </div>
         <div class="footer">
-            <div>
-                <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul></div>
-            <div>
-                <p>Verses</p>
-                <ul>
-                <li><a href="verses1-2.html">Verses 3-8</a></li>
-                <li><a href="verses3-8.html">Verses 9-16</a></li>
-                <li><a href="verses14,17-20.html">Verses 14, 17-20</a></li>
-                <li><a href="verse21.html">Verse 21</a></li>
-            </ul></div>
-            <div>
-                <p>Testimonies</p>
-                <ul>
-                <li><a href=""></a></li>
-            </ul></div>
-            <div><p>Stories</p>
-                <ul>
-                <li><a href="testimonies.html">Verses 14, 17-20</a></li>
-                </ul></div>
+            <p>By Algrero</p>
         </div>
-    </div>
 </body>
 </html>
