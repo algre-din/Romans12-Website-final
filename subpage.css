@@ -50,20 +50,20 @@
     width: max(5vw, 50px);
 }
 
-ul {
+.navbar_left ul {
     list-style: none;
     background: #fefae0;
     font-family: Restora;
 }
 
-ul li {
+.navbar_left ul li {
     display: inline-block;
     position: relative;
     padding: 0 20px 0 20px;
     font-size: clamp(20px, 1.8vw, 25px);
 }
 
-ul li a {
+.navbar_left ul li a {
     color: #283618;
     text-decoration: none;
     display: block;
@@ -71,7 +71,7 @@ ul li a {
     font-size: clamp(20px, 2vw, 25px);
 }
 
-ul li ul.dropdown {
+.navbar_left ul li ul.dropdown {
     width: 100%;
     background: #fefae0;
     position: absolute;
@@ -79,21 +79,21 @@ ul li ul.dropdown {
     display: none;
 }
 
-ul li ul.dropdown li {
+.navbar_left ul li ul.dropdown li {
     display: block;
 }
 
-ul li ul.dropdown li a {
+.navbar_left ul li ul.dropdown li a {
     display: block;
     padding: 10px;
     text-align: center;
 }
 
-ul li a:hover {
+.navbar_left ul li a:hover {
     background: #fffcea;
 }
 
-ul li:hover ul.dropdown {
+.navbar_left ul li:hover ul.dropdown {
     display: block;
 }
 
@@ -138,7 +138,6 @@ ul li:hover ul.dropdown {
         "portrait"
         "description"; 
     }
-
 }
   
   .portrait {
