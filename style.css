@@ -22,6 +22,7 @@
     "navbar_left navbar_left navbar_left"
     "carousel-container carousel-container carousel-container"
     "subheading subheading subheading"
+    "caption caption caption"
     "text_2 text_1 text_1"
     "footer footer footer";
 }
@@ -34,6 +35,7 @@
         "navbar_left"
         "carousel-container"
         "subheading"
+        "caption"
         "text_1"
         "text_2"
         "footer"; 
@@ -154,6 +156,11 @@ ul li:hover ul.dropdown {
     grid-area: subheading;
     text-align: center;
     padding: 0 1vw 0 1vw;
+}
+
+.caption {
+    color: #283618;
+    text-align: center;
 }
 
 .text_2 {
