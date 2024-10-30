@@ -26,11 +26,34 @@
     "footer footer footer";
 }
 
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "navbar_left"
+        "banner"
+        "subheading"
+        "text_1"
+        "footer"; 
+    }
+
+    .testimony {
+        grid-area: testimony;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "portrait"
+        "description";
+    }
+
+}
+
 /*Navbar section*/
 .navbar_left {
     grid-area: navbar_left;
     background-color: #fefae0;
-    text-align: left;
 }
 
 .navbar_left img {
@@ -55,7 +78,7 @@ ul li a {
     text-decoration: none;
     display: block;
     text-align: center;
-    font-size: clamp(1px, 2vw, 25px);
+    font-size: clamp(20px, 2vw, 25px);
 }
 
 ul li ul.dropdown {
@@ -83,6 +106,7 @@ ul li a:hover {
 ul li:hover ul.dropdown {
     display: block;
 }
+
 /*End of navbar section*/
 
 .subheading {
@@ -115,7 +139,7 @@ ul li:hover ul.dropdown {
     grid-template-areas:
     "portrait description";
   }
-
+  
   .portrait {
     grid-area: portrait;
     display: inline;
