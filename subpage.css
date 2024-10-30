@@ -38,16 +38,6 @@
         "footer"; 
     }
 
-    .testimony {
-        grid-area: testimony;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "portrait"
-        "description";
-    }
-
 }
 
 /*Navbar section*/
@@ -139,6 +129,17 @@ ul li:hover ul.dropdown {
     grid-template-areas:
     "portrait description";
   }
+
+  @media (max-width: 600px) {
+    .testimony {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "portrait"
+        "description"; 
+    }
+
+}
   
   .portrait {
     grid-area: portrait;
