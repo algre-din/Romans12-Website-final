@@ -158,7 +158,7 @@
   }
 
   .description p {
-    font-size: 1em;
+    font-size: max(1em, 15px);
   }
 
 .footer {
