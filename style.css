@@ -247,4 +247,5 @@ img {
     overflow: hidden;
     background-color: #fefae0;
     border-style: solid;
+    border-radius: 0.5em;
   }
