@@ -197,6 +197,8 @@ h2 {
 h3 {
     font-family: 'Restora';
     font-size: 1.5em;
+    margin: 0;
+    padding: 0;
 }
 
 p {
