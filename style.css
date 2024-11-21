@@ -194,13 +194,6 @@ h2 {
     color: #283618;
 }
 
-h3 {
-    font-family: 'Restora';
-    font-size: 1.5em;
-    margin: 0;
-    padding: 0;
-}
-
 p {
     font-family: 'Restora';
     font-size: clamp(10px, 1em, 20px);
@@ -221,14 +214,18 @@ img {
     background-color: #283618;
     color: #fefae0;
     cursor: pointer;
-    padding: 0 1em 0 1em;
+    padding: 1em 1em 1em 1em;
     width: 100%;
     border-style: solid;
     border-color: #283618;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     text-align: left;
     outline: 10px;
-    font-size: clamp(10px, 1vw, 40px);
+    font-size: clamp(10px, 2em, 40px);
+    font-family: 'Restora';
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   
   .active, .collapsible:hover {
