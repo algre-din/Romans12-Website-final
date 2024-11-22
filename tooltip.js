@@ -87,3 +87,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var v21 = document.querySelector('.v21text');
     v21.textContent = "21 Be not overcome of evil, but overcome evil with good.";
 });
+
+//Testimonies//
+document.addEventListener("DOMContentLoaded", function() { 
+    var v1v2ii = document.querySelector('.v1v2iitext');
+    v1v2ii.textContent = "1. I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. 2. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.";
+});
