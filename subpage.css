@@ -120,6 +120,18 @@
     border-radius: 1em;
 }
 
+.video-wrapper {
+    border-radius: 1em;
+    overflow: hidden; /* Ensures the video doesn't exceed the container's borders */
+    display: inline-block;
+}
+
+video {
+    display: block; /* Remove any default margins or spacing */
+    width: 100%;
+    height: auto;
+}
+
 iframe {
     border: none;
 }
