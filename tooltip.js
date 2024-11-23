@@ -93,3 +93,22 @@ document.addEventListener("DOMContentLoaded", function() {
     var v1v2ii = document.querySelector('.v1v2iitext');
     v1v2ii.textContent = "1. I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. 2. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.";
 });
+
+//This is for blocking third-party cookies//
+
+// scripts.js
+function openLinkWithPolicy(url) {
+    const newWindow = window.open(url, '_blank');
+    if (newWindow) {
+        newWindow.referrerPolicy = 'no-referrer'; // Adjust the policy as needed
+    }
+}
+
+// Add event listeners for buttons with the 'policy-link' class (optional dynamic approach)
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.policy-link').forEach(button => {
+        button.addEventListener('click', () => {
+            openLinkWithPolicy(button.getAttribute('data-url'));
+        });
+    });
+});
