@@ -53,7 +53,7 @@
 .navbar_left ul {
     list-style: none;
     background: #fefae0;
-    font-family: Restora;
+    font-family: Restora;    
 }
 
 .navbar_left ul li {
@@ -61,6 +61,7 @@
     position: relative;
     padding: 0 20px 0 20px;
     font-size: clamp(20px, 1.8vw, 25px);
+    cursor: pointer;
 }
 
 .navbar_left ul li a {

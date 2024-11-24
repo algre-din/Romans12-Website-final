@@ -94,21 +94,20 @@ document.addEventListener("DOMContentLoaded", function() {
     v1v2ii.textContent = "1. I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. 2. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.";
 });
 
-//This is for blocking third-party cookies//
+// Show the cookie consent popup on page load if not already decided
+window.onload = function() {
+    const cookiesAccepted = localStorage.getItem("cookiesAccepted");
 
-// scripts.js
-function openLinkWithPolicy(url) {
-    const newWindow = window.open(url, '_blank');
-    if (newWindow) {
-        newWindow.referrerPolicy = 'no-referrer'; // Adjust the policy as needed
+    if (!cookiesAccepted) {
+      document.getElementById("cookie-consent-popup").style.display = "block";
+    } else {
+      document.getElementById("reset-preferences").style.display = "block"; // Show reset button
     }
-}
+  };
 
-// Add event listeners for buttons with the 'policy-link' class (optional dynamic approach)
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.policy-link').forEach(button => {
-        button.addEventListener('click', () => {
-            openLinkWithPolicy(button.getAttribute('data-url'));
-        });
-    });
-});
+  // Accept cookies
+  document.getElementById("accept-cookies").onclick = function() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-consent-popup").style.display = "none";
+    document.getElementById("reset-preferences").style.display = "block"; // Show reset button
+  };

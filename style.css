@@ -63,6 +63,7 @@ ul li {
     position: relative;
     padding: 0 20px 0 20px;
     font-size: clamp(20px, 1.8vw, 25px);
+    cursor: pointer;
 }
 
 ul li a {
@@ -242,3 +243,49 @@ img {
     border-radius: 0.5em;
     border-color: #283618;
   }
+
+
+button {
+    font-family: Restora;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.5rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: #fefae0;
+    color: #283618;
+    border: 2px solid #283618;
+    border-radius: 0.5em;
+  }
+
+  button:hover {
+    background-color: #283618;
+    color: #fefae0;
+  }
+
+ /* Style for the cookie consent pop-up */
+.cookie-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fefae0;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.cookie-popup p {
+    color: #fefae0;
+}
+
+.cookie-popup button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+}
