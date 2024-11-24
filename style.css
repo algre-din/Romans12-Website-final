@@ -13,6 +13,12 @@
     src: url(fonts/richardson_script/RichardsonScriptDEMO.otf) format('opentype');
 }
 
+@font-face {
+    font-family: 'Georgia';
+    src: url('georgia.woff2') format('woff2');
+    font-display: swap;
+  }
+
 .container {
     background-color: #fefae0;
     display: grid;
@@ -278,6 +284,7 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fefae0;
     padding: 1em 2em 1em 0;
