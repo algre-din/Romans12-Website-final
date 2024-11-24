@@ -128,26 +128,32 @@ ul li:hover ul.dropdown {
     width: auto; 
     padding: 16px; 
     margin-top: -22px; 
-    color: white; 
+    color: #704214;
+    border-color: #704214;
     font-weight: bold; 
-    font-size: 18px; 
+    font-size: 1em; 
     transition: 0.6s ease; 
-    border-radius: 0 3px 3px 0; 
+    border-radius: 1em; 
     user-select: none; 
+    background-color: rgba(255, 255, 255, 0);
 } 
 
 .next {
     right: 0; 
-    border-radius: 3px 0 0 3px; 
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0);
 } 
 
 .prev { 
     left: 0;
-    border-radius: 3px 0 0 3px; 
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0);
 } 
 
 .prev:hover, .next:hover { 
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(255, 255, 255, 0);
+    color: #283618;
+    border-color: #283618;
 }
 /*end carousel*/
 
@@ -274,7 +280,7 @@ button {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fefae0;
-    padding: 15px;
+    padding: 1em;
     text-align: center;
     font-size: 16px;
     z-index: 1000;
@@ -282,10 +288,13 @@ button {
 
 .cookie-popup p {
     color: #fefae0;
+    font-size: 1.5em;
+    line-height: 3em;
+    padding: 2vh 2vw;
 }
 
 .cookie-popup button {
     margin: 5px;
     padding: 10px;
-    font-size: 14px;
+    font-size: 1em;
 }
